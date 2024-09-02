@@ -18,3 +18,128 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '16'
+      - name: checkPlayerClass1 (1 Point)
+        id: checkplayerclass1-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: checkPlayerClass1 (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.checkPlayerClass1
+          timeout: 1
+          max-score: 1
+      - name: checkPlayerClass2 (1 Point)
+        id: checkplayerclass2-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: checkPlayerClass2 (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.checkPlayerClass2
+          timeout: 1
+          max-score: 1
+      - name: getName (1 Point)
+        id: getname-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: getName (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.getName
+          timeout: 1
+          max-score: 1
+      - name: getSymbol (1 Point)
+        id: getsymbol-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: getSymbol (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.getSymbol
+          timeout: 1
+          max-score: 1
+      - name: makeMove (2 Points)
+        id: makemove-2-points
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: makeMove (2 Points)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.makeMove
+          timeout: 1
+          max-score: 2
+      - name: checkTicTacToeClass1 (1 Point)
+        id: checktictactoeclass1-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: checkTicTacToeClass1 (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.checkTicTacToeClass1
+          timeout: 1
+          max-score: 1
+      - name: checkTicTacToeClass2 (1 Point)
+        id: checktictactoeclass2-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: checkTicTacToeClass2 (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.checkTicTacToeClass2
+          timeout: 1
+          max-score: 1
+      - name: placeTic (1 Point)
+        id: placetic-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: placeTic (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.placeTic
+          timeout: 1
+          max-score: 1
+      - name: prettyPrintGameBoard (2 Points)
+        id: prettyprintgameboard-2-points
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: prettyPrintGameBoard (2 Points)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.prettyPrintGameBoard
+          timeout: 1
+          max-score: 2
+      - name: checkIfWon (2 Points)
+        id: checkifwon-2-points
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: checkIfWon (2 Points)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.checkIfWon
+          timeout: 1
+          max-score: 2
+      - name: playGame1 (1 Point)
+        id: playgame1-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: playGame1 (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.playGame1
+          timeout: 1
+          max-score: 1
+      - name: playGame2 (1 Point)
+        id: playgame2-1-point
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: playGame2 (1 Point)
+          setup-command: ''
+          command: gradle test --tests at.ac.fhcampuswien.tictactoe.TicTacToeTest.playGame2
+          timeout: 1
+          max-score: 1
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          CHECKPLAYERCLASS1-1-POINT_RESULTS: "${{steps.checkplayerclass1-1-point.outputs.result}}"
+          CHECKPLAYERCLASS2-1-POINT_RESULTS: "${{steps.checkplayerclass2-1-point.outputs.result}}"
+          GETNAME-1-POINT_RESULTS: "${{steps.getname-1-point.outputs.result}}"
+          GETSYMBOL-1-POINT_RESULTS: "${{steps.getsymbol-1-point.outputs.result}}"
+          MAKEMOVE-2-POINTS_RESULTS: "${{steps.makemove-2-points.outputs.result}}"
+          CHECKTICTACTOECLASS1-1-POINT_RESULTS: "${{steps.checktictactoeclass1-1-point.outputs.result}}"
+          CHECKTICTACTOECLASS2-1-POINT_RESULTS: "${{steps.checktictactoeclass2-1-point.outputs.result}}"
+          PLACETIC-1-POINT_RESULTS: "${{steps.placetic-1-point.outputs.result}}"
+          PRETTYPRINTGAMEBOARD-2-POINTS_RESULTS: "${{steps.prettyprintgameboard-2-points.outputs.result}}"
+          CHECKIFWON-2-POINTS_RESULTS: "${{steps.checkifwon-2-points.outputs.result}}"
+          PLAYGAME1-1-POINT_RESULTS: "${{steps.playgame1-1-point.outputs.result}}"
+          PLAYGAME2-1-POINT_RESULTS: "${{steps.playgame2-1-point.outputs.result}}"
+        with:
+          runners: checkplayerclass1-1-point,checkplayerclass2-1-point,getname-1-point,getsymbol-1-point,makemove-2-points,checktictactoeclass1-1-point,checktictactoeclass2-1-point,placetic-1-point,prettyprintgameboard-2-points,checkifwon-2-points,playgame1-1-point,playgame2-1-point
